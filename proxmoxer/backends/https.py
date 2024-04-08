@@ -51,7 +51,7 @@ class ProxmoxHTTPAuthBase(AuthBase):
 class ProxmoxHTTPAuth(ProxmoxHTTPAuthBase):
     # number of seconds between renewing access tickets (must be less than 7200 to function correctly)
     # if calls are made less frequently than 2 hrs, using the API token auth is recommended
-    renew_age = 3600
+    renew_age = 60*1
 
     def __init__(self, username, password, otp=None, base_url="", **kwargs):
         super().__init__(**kwargs)
